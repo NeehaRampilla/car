@@ -25,7 +25,11 @@ class Player {
       distance:this.distance
     });
   }
-
+  static resetplayer(){
+    var dbref= database.ref('players')
+    dbref.remove();
+    console.log("removed");
+  }
   static getPlayerInfo(){
     var playerInfoRef = database.ref('players');
     playerInfoRef.on("value",(data)=>{
